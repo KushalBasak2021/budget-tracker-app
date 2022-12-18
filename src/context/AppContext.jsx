@@ -25,8 +25,8 @@ const AppReducer = (state, action) => {
 };
 
 const initialState = {
-  budget: JSON.parse(localStorage.getItem("budget")),
-  expenses: JSON.parse(localStorage.getItem("expenses")),
+  budget: JSON.parse(localStorage.getItem("budget")) || 0,
+  expenses: JSON.parse(localStorage.getItem("expenses")) || [],
 };
 
 export const AppContext = createContext();
