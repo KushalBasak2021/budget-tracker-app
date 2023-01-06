@@ -11,7 +11,7 @@ function ExpenseItem({ expense }) {
   }
   return (
     <div className="expense-item">
-      <p>{expense.name}</p>
+      <p className="expense-text">{expense.name}</p>
       <div className="right">
         <p>{expense.date}</p>
         <p>₹{expense.cost}</p>

@@ -10,16 +10,29 @@ function Addexpense() {
 
   function handleClick() {
     let date = new Date();
+    const yyyy = date.getFullYear();
+    let mm = date.getMonth() + 1;
+    let dd = date.getDate();
+
+    if (dd < 10) dd = "0" + dd;
+    if (mm < 10) mm = "0" + mm;
+
     const expense = {
       id: nanoid(),
       name: name,
-      date: date.toLocaleDateString(),
+      date: dd + "/" + mm + "/" + yyyy,
       cost: parseInt(cost),
     };
 
     dispatch({ type: "ADD_EXPENSE", payload: expense });
     setName("");
     setCost("");
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      handleClick();
+    }
   }
   return (
     <div className="Addexpense">
@@ -42,6 +55,7 @@ function Addexpense() {
             placeholder="Cost of the expense"
             value={cost}
             onChange={(e) => setCost(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
         </div>
       </div>

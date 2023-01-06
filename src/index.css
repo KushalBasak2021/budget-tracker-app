@@ -14,11 +14,13 @@ body {
 }
 
 .App {
-  width: 1000px;
+  width: 85vw;
+  max-width: 1000px;
 }
 
 h1 {
   padding-bottom: 25px;
+  text-align: center;
 }
 
 .money-div {
@@ -49,6 +51,7 @@ h1 {
 
 .edit-budget input {
   font-size: 18px;
+  width: 70%;
   max-width: 200px;
   padding: 7px 10px;
   border-radius: 5px;
@@ -97,6 +100,8 @@ h2 {
 }
 
 .expense-list {
+  display: flex;
+  flex-direction: column-reverse;
   max-height: 200px;
   overflow-y: scroll;
   margin-bottom: 25px;
@@ -122,7 +127,7 @@ h2 {
   background-color: #0d6efd;
   color: #fff;
   padding: 5px 10px;
-  border-radius: 15px;
+  border-radius: 5px;
   font-size: 16px;
 }
 
@@ -153,4 +158,75 @@ h2 {
   padding: 7px 10px;
   min-width: 300px;
   outline: none;
+}
+
+@media (max-width: 900px) {
+  .App {
+    width: 95vw;
+  }
+
+  .money-div {
+    gap: 10px;
+    padding-bottom: 30px;
+  }
+
+  .input-div input {
+    border: 1px solid #a8a7a7;
+  }
+
+  .expense-div input {
+    margin-bottom: 40px;
+  }
+
+  .expense-list {
+    max-height: 300px;
+    margin-bottom: 40px;
+  }
+
+  .view-budget,
+  .edit-budget {
+    flex: 4;
+  }
+
+  .remaining,
+  .spend {
+    flex: 3;
+  }
+}
+
+@media (max-width: 500px) {
+  .money-div,
+  .Addexpense,
+  .inputs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .view-budget,
+  .edit-budget,
+  .remaining,
+  .spend {
+    width: 100%;
+  }
+
+  .Addexpense {
+    margin-bottom: 10px;
+  }
+
+  .expense-item {
+    display: flex;
+    font-size: 16px;
+    gap: 5px;
+    padding: 10px 5px;
+  }
+
+  .expense-text {
+    flex: 6;
+    word-break: break-all;
+  }
+
+  .expense-item .right {
+    flex: 4;
+    gap: 5px;
+  }
 }
