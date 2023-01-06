@@ -114,6 +114,7 @@ h2 {
   border: 1px solid #e1e1e1;
   font-size: 18px;
   font-weight: 500;
+  align-items: center;
 }
 
 .expense-item .right {
